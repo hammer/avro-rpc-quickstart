@@ -1,6 +1,7 @@
 h1. "Avro RPC Quick Start":http://github.com/phunt/avro-rpc-quickstart
 
 *Author: "Patrick Hunt":http://people.apache.org/~phunt/* (follow me on "twitter":http://twitter.com/phunt)
+*Just Poking Around: Jeff Hammerbacher (follow me on "facebook":http://www.facebook.com/jeff.hammerbacher)
 
 h2. Summary
 
