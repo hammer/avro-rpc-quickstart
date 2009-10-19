@@ -157,7 +157,7 @@ src/main/python/send_message.py
 # the start_server() method starts the server which implements the Mail service (Mail/MailResponder)
 # the main function takes three arguments; to, from and body of the message. After the server is started a Mail client is created, attached to the service, and used to send a "Message", the result of the RPC call is printed to the console.
 
-Note: version 1.1.0 of Avro is generating an error after closing the server. There is a JIRA pending for this.
+Note: version 1.1.0 of Avro is generating an error after closing the server. There is a JIRA pending for this: https://issues.apache.org/jira/browse/AVRO-130.
 
 h4. Run the python
 
