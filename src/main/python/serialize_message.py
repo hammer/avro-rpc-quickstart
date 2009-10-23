@@ -16,7 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import sys
+import sys, os.path
 
 from avro import protocol
 from avro.genericio import DatumWriter, DatumReader
@@ -46,9 +46,14 @@ if __name__ == '__main__':
         num_records = 1
 
     # write the Message record to a file
-    w = file(OUTFILE_NAME, 'w')
     dw = DatumWriter(MESSAGE_SCHEMA)
-    dfw = DataFileWriter(MESSAGE_SCHEMA, w, dw)
+    if os.path.exists(OUTFILE_NAME):
+        w = file(OUTFILE_NAME, 'a+b')
+        dfw = DataFileWriter.create_for_append(w, dw)
+    else:
+        w = file(OUTFILE_NAME, 'wb')
+        dfw = DataFileWriter.create_new(MESSAGE_SCHEMA, w, dw)
+
     for i in range(num_records):
         dfw.append(message)
     dfw.close()
